@@ -11,10 +11,35 @@ class PageAlert extends StatelessWidget {
       ),
       body: Center(
         child: ElevatedButton(
-          onPressed: null,
+          onPressed: (){
+            alerte(context);
+          },
           child: Text("Show AlertDialog"),
         ),
       ),
     );
   }
+
+  Future<void> alerte(BuildContext context) async{
+    showDialog(
+        context: context,
+        builder: (BuildContext contextDialog){
+          return AlertDialog(
+            title: Text("Voulez vous supprimer ... ?"),
+            content: Text("Attention à ce que vous faites.."),
+            actions: [
+              TextButton(
+                  onPressed: null,
+                  child: Text("Annuler", style: TextStyle(color: Colors.red),)
+              ),
+              TextButton(
+                  onPressed: null,
+                  child: Text("Confirmer", style: TextStyle(color: Colors.blue),)
+              ),
+            ],
+          ) ;
+        }
+    );
+  }
+
 }
