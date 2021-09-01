@@ -32,10 +32,16 @@ class _PageSimpleState extends State<PageSimple> {
                     MaterialPageRoute(builder: (BuildContext context){
                       return PageSnack();
                     }),
-                    (Route<dynamic> route) => false
+                        (Route<dynamic> route) => false
                 );
               },
-              child: Text("Got To Simple Replacement"),
+              child: Text("pushAndRemoveUntil"),
+            ),
+            ElevatedButton(
+              onPressed: (){
+                Navigator.pop(context);
+              },
+              child: Text("pop"),
             ),
           ],
         )
