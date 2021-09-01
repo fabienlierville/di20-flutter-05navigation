@@ -23,17 +23,24 @@ class PageAlert extends StatelessWidget {
   Future<void> alerte(BuildContext context) async{
     showDialog(
         context: context,
+        barrierDismissible: false,
         builder: (BuildContext contextDialog){
           return AlertDialog(
             title: Text("Voulez vous supprimer ... ?"),
             content: Text("Attention à ce que vous faites.."),
             actions: [
               TextButton(
-                  onPressed: null,
+                  onPressed: (){
+                    print("Annuler");
+                    Navigator.pop(contextDialog);
+                  },
                   child: Text("Annuler", style: TextStyle(color: Colors.red),)
               ),
               TextButton(
-                  onPressed: null,
+                  onPressed: (){
+                    print("Appel API");
+                    Navigator.pop(contextDialog);
+                  },
                   child: Text("Confirmer", style: TextStyle(color: Colors.blue),)
               ),
             ],
