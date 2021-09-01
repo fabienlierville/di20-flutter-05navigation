@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:navigation/Pages/page_simple.dart';
 
 class PageBottom extends StatefulWidget {
   const PageBottom({Key? key}) : super(key: key);
@@ -23,6 +24,28 @@ class _PageBottomState extends State<PageBottom> {
               ElevatedButton(
                 onPressed: bottom,
                 child: Text("Show Bottom"),
+              ),
+              ElevatedButton(
+                onPressed: (){
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (BuildContext context){
+                        return PageSimple();
+                      })
+                  );
+                },
+                child: Text("Got To Simple"),
+              ),
+              ElevatedButton(
+                onPressed: (){
+                  Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(builder: (BuildContext context){
+                        return PageSimple();
+                      })
+                  );
+                },
+                child: Text("Got To Simple Replacement"),
               ),
             ],
           )

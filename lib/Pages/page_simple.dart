@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:navigation/Pages/page_snack.dart';
 
 class PageSimple extends StatefulWidget {
   const PageSimple({Key? key}) : super(key: key);
@@ -23,6 +24,18 @@ class _PageSimpleState extends State<PageSimple> {
             ElevatedButton(
               onPressed: simple,
               child: Text("Show AlertDialog"),
+            ),
+            ElevatedButton(
+              onPressed: (){
+                Navigator.pushAndRemoveUntil(
+                    context,
+                    MaterialPageRoute(builder: (BuildContext context){
+                      return PageSnack();
+                    }),
+                    (Route<dynamic> route) => false
+                );
+              },
+              child: Text("Got To Simple Replacement"),
             ),
           ],
         )
