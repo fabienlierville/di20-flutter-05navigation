@@ -29,30 +29,14 @@ class PageSnack extends StatelessWidget {
         onTap: (int index){
           switch(index){
             case 0:
-              Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (BuildContext context){
-                    return PageAlert();
-                  })
-              );
+              Navigator.pushNamed(context, "/alert");
               break;
             case 1:
-              Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (BuildContext context){
-                    return PageSimple();
-                  })
-              );
+              Navigator.pushNamed(context, "/simple");
               break;
             case 2:
-              Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (BuildContext context){
-                    return PageBottom();
-                  })
-              );
+              Navigator.pushNamed(context, "/bottom");
               break;
-
           }
         },
       ),
